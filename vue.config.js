@@ -9,26 +9,23 @@ module.exports = {
             }
         }
     },
-    // 配置
-    chainWebpack: (config) => {
-        // 配置别名
-        config.resolve.alias
-            .set('@', resolve('src'))
-            .set('assets', resolve('src/assets'))
-            .set('components', resolve('src/components'))
-            .set('router', resolve('src/router'))
-            .set('utils', resolve('src/utils'))
-            .set('store', resolve('src/store'))
-            .set('views', resolve('src/views'))
+    // 配置别名
+    configureWebpack: {
+        resolve: {
+            alias: {
+                'assets': '@/assets',
+                'com': '@/components'
+            }
+        }
     },
     // 跨域代理
     devServer: {
-        proxy: {
-            '/api': {
-                target: '',
-                changeOrigin: true
-            }
-        }
+        // proxy: {
+        //     '/api': {
+        //         target: '',
+        //         changeOrigin: true
+        //     }
+        // }
     },
     publicPath: './', // 编译后的地址，可以根据环境进行设置
     // lintOnSave: true, // 是否开启编译时是否不符合eslint提示
