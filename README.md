@@ -1,4 +1,4 @@
-# project_vue3.0
+# project_vue2
 
 ### 开发环境
 ```
